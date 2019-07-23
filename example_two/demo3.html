@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<body>
+		<div id="app"></div>
+	</body>
+	<script type="text/javascript">
+		let datas  = {message : "you are good man"};
+		
+		let vm = new Vue({
+			el:"#app",
+			data:datas
+		})
+		
+		// vm.$data == datas  ---true
+		// vm.$el == document.getElementById("app") ---true
+	</script>
+</html>

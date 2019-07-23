@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<body>
+		<div id="app">
+			<button type="button" @click="changeMessage">改变</button>
+			<input type="text" v-model="message">
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		var datas = {
+				message: "你动我试试"
+			}
+		Object.freeze(datas);
+			new Vue({
+				el: "#app",
+				data: datas,
+				methods:{
+					changeMessage(){
+						this.message="试试就试试"
+					}
+				}
+			})
+	</script>
+</html>
