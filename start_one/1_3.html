@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<body>
+		<div id="app">
+			<button type="button" @click="turn">开关</button>
+			<span v-if="seen">看到我了吗</span>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				seen:false
+			},
+			methods:{
+				turn(){
+					this.seen = this.seen?false:true;
+				}
+			}
+		})
+	</script>
+</html>

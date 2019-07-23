@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<body>
+		<div id="app">
+			<ol>
+				<todo-item 
+				v-for="obj in lists" 
+				v-bind:param="obj"
+				v-bind:key="obj.id"
+				v-bind:title="obj.id"></todo-item>
+			</ol>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+	Vue.component('todo-item', {
+		props:["param"],
+		template: '<li>{{param.item}}</li>'
+	})
+		
+		var app = new Vue({
+			el:"#app",
+			data:{
+				lists:[
+					{id:1,item:"第一个参数"},
+					{id:2,item:"第二个参数"},
+					{id:3,item:"第三个参数"},
+					{id:4,item:"第四个参数"},
+					{id:5,item:"第五个参数"},
+					{id:6,item:"第六个参数"},
+				]
+			}
+		})
+	</script>
+</html>

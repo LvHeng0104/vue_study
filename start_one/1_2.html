@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	
+</head>
+	<body>
+		<div id="app">
+			<!-- 这段组合代码作用是在文字上鼠标悬浮展示message的值 -->
+			<!-- 其中 v-bind 可以省略,直接通过title="message"的方式可以达到同样的效果 -->
+			<span v-bind:title="message">
+				鼠标悬浮展示
+			</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data:{
+				message:"hello vue"
+			}
+		});
+		
+	</script>
+</html>
