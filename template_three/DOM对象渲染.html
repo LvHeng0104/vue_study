@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<body>
+		<div id="app">
+			<span>普通大括号渲染效果:</span>{{dom1}}<br />
+			
+			<span>v-html 渲染效果:</span><span v-html="dom1"></span>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				dom1:"<a href='https://www.baidu.com'>点击进入百度</a>"
+			}
+			
+		})
+		
+	</script>
+</html>

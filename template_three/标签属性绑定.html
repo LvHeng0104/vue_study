@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<body>
+		<div id="app">
+			
+			<span v-bind:title="message">鼠标悬浮查看title</span>
+			<br><br>
+			<span v-bind:[property]="message">鼠标悬浮查看title</span>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				message:"我是悬浮文字",
+				property:"title"
+			}
+		})
+	</script>
+</html>
