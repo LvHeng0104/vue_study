@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<style type="text/css">
+		.static {
+			width: 12.5rem;
+			height: 12.5rem;
+			background-color: lightblue;
+		}
+
+		.class1 {
+			background-color: lightgoldenrodyellow;
+		}
+		.class2{
+			background-color: red;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<!-- 不需要动态绑定的直接引入 -->
+			<div class="static">
+				a
+			</div>
+			<hr />
+			<button @click="changehasError">点击修改hasError的值</button>
+			<div class="static" :class="{class1:isActive,class2:hasError}">
+				b
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		let vm = new Vue({
+			el: "#app",
+			data: {
+			 isActive: true,
+			  hasError: false
+			},
+			methods:{
+				changehasError(){
+					this.hasError = !this.hasError
+				}
+			}
+		})
+	</script>
+</html>
