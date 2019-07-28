@@ -1,4 +1,4 @@
-# Table of Contents
+# Vue实例
 
 * [二. Vue 实例](#二-vue-实例)
   * [2.1 Vue对象的初始化](#21-vue对象的初始化)
