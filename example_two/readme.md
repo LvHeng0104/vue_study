@@ -1,4 +1,4 @@
-# Table of Contents
+# Vue 实例
 
 * [Vue实例](#vue实例)
     * [二. Vue 实例](#二-vue-实例)
