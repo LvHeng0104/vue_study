@@ -1,5 +1,6 @@
-# Vue特性语法
+# Table of Contents
 
+* [Vue特性语法](#vue特性语法)
   * [三.Vue语法特性 Vue本生的API](#三vue语法特性-vue本生的api)
     * [3.1 文本渲染](#31-文本渲染)
     * [3.2 DOM对象渲染](#32-dom对象渲染)
