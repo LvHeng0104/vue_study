@@ -1,4 +1,4 @@
-# 笔记总纲
+# Table of Contents
 
 * [使用到的指令](#使用到的指令)
   * [一.起步](#一起步)
@@ -26,8 +26,8 @@
   * [五.绑定Class和Style](#五绑定class和style)
     * [5.1 对象语法](#51-对象语法)
   * [5.2 Class绑定语法使用计算属性](#52-class绑定语法使用计算属性)
-  * [5.3 数组语法](#53-数组语法)
-
+    * [5.3 数组语法](#53-数组语法)
+    * [5.4 行内样式绑定](#54-行内样式绑定)
 
 
 > 2019-7-23 vue学习仓库创建,该文件用于记录笔记	=-
@@ -871,7 +871,7 @@ Vue.component('组件名称',{
 ```
 
 
-## 5.3 数组语法
+### 5.3 数组语法
 > 给 `:class`传递一个数组,应用一个样式列表
 
 ```html
@@ -931,3 +931,52 @@ Vue.component('组件名称',{
 
 
 
+### 5.4 行内样式绑定
+> 基本上和Class绑定的通用,但是有一些问题需要注意,详将如下
+
+```HTML
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	
+	<body>
+		<div id="app">
+			<!-- 单个样式绑定 -->
+			<div :style="{color:activeColor,fontSize:activeFont}">a</div>
+			<hr >
+			<!-- 绑定一组样式,有些样式不支持,比如background-color-->
+			<div :style="styleObject">b</div>
+			
+		
+			
+			
+			
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		new Vue({
+			el: "#app",
+			data: {
+				activeColor:"red",
+				activeFont:"20px",
+				styleObject:{
+					width: "12.5rem",
+					height: "12.5rem",
+					/* vue应该是有bug,没办法识别 -  */
+					// background-color: "lightgoldenrodyellow",
+					// font-style: oblique,
+					color:"yellow"
+				}
+			}
+		})
+	</script>
+</html>
+
+```
