@@ -5,8 +5,9 @@
 <br>
 [二. Vue 实例](#二-vue-实例)
 <br>
-
-[三.Vue语法特性 Vue本生的API](#三-vue-语法特性-vue-本生的-api-)
+[三.Vue语法特性 Vue本生的API](#三vue语法特性-vue本生的api)
+<br>
+[四. 计算属性和侦听器](#四计算属性和侦听器)
 <br>
 
 
