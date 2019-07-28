@@ -1,5 +1,6 @@
 # Table of Contents
 
+* [使用到的指令](#使用到的指令)
   * [一.起步](#一起步)
     * [1.1 vue是响应式的](#11-vue是响应式的)
     * [1.2 绑定vue成员变量到dom属性](#12-绑定vue成员变量到dom属性)
@@ -26,6 +27,27 @@
 
 
 > 2019-7-23 vue学习仓库创建,该文件用于记录笔记	=-
+
+# 使用到的指令
+- v-bind 为DOM的属性动态渲染值 
+- v-if   判定条件,根据条件来决定 移除/插入元素
+- v-for  遍历Vue中属性,没有一次遍历便可以 插入一次元素
+- v-on   为DOM标签的事件绑定Vue函数,其一般为动态内容,绑定的是函数,如blur,onchange,click等
+- v-model 为DOM即时渲染数据
+- v-once 大括号内容不会随着Vue改变,其中内容只会渲染一次
+- v-html 将文本渲染为DOM对象插入到HTML中
+- v-bind:[property]="$data" 动态选择属性进行赋值
+- 组件
+
+```javascript
+Vue.component('组件名称',{
+	[props:[组件参数名称]],
+	templaet:"组件模板"
+	})
+```
+- 缩写
+ - v-bind可缩写为 `:`
+ - v-on可缩写为 `@`
 
 
 ## 一.起步
@@ -724,23 +746,3 @@
 
 ```
 
-> 总结:使用到的指令
-- v-bind 为DOM的属性动态渲染值 
-- v-if   判定条件,根据条件来决定 移除/插入元素
-- v-for  遍历Vue中属性,没有一次遍历便可以 插入一次元素
-- v-on   为DOM标签的事件绑定Vue函数,其一般为动态内容,绑定的是函数,如blur,onchange,click等
-- v-model 为DOM即时渲染数据
-- v-once 大括号内容不会随着Vue改变,其中内容只会渲染一次
-- v-html 将文本渲染为DOM对象插入到HTML中
-- v-bind:[property]="$data" 动态选择属性进行赋值
-- 组件
-
-```javascript
-Vue.component('组件名称',{
-	[props:[组件参数名称]],
-	templaet:"组件模板"
-	})
-```
-- 缩写
- - v-bind可缩写为 `:`
- - v-on可缩写为 `@`
