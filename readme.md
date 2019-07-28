@@ -1,6 +1,13 @@
 
 > 2019-7-23 vue学习仓库创建,该文件用于记录笔记	=-
 
+[TOC]
+
+
+
+[一.起步](##一.起步)
+[二. Vue 实例](##二. Vue 实例)
+
 ## 一.起步
 ### 1.1 vue是响应式的
 ```javascrip
@@ -546,8 +553,49 @@
 
 ### 4.1 计算属性
 > 属性计算,就是对参数进行Javscript运算
+
+> 但运算在`{{}}`中使用复杂的时候,就推荐使用计算属性,将计算过程放到后台,而不是渲染过程 中
 ```html
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
 	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<body>
+		<div id="app">
+			<input type="text" v-model="message"><br>
+			<span>{{message}}</span><br>
+			<span>{{resersedMessage}}</span>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				message:"信息文字"
+			},
+			computed:{
+				//计算属性的getter
+				//计算属性也算是属性,调用的时候不需要加( )
+				//计算属性里面的其他属性值,就是`this.xxx`,会自动监听,一但其中数值发生变化,计算属性也会重新计算
+				//如果其他属性没有变化,计算属性不会重新计算,并且一直缓存着
+				resersedMessage:function(){
+					//this只想当前Vue实例
+					return this.message.split('').reverse().join('');
+				}
+			}
+		})
+	</script>
+</html>
+
+
 ```
 
 > 总结:使用到的指令
@@ -560,6 +608,7 @@
 - v-html 将文本渲染为DOM对象插入到HTML中
 - v-bind:[property]="$data" 动态选择属性进行赋值
 - 组件
+
 ```javascript
 Vue.component('组件名称',{
 	[props:[组件参数名称]],
