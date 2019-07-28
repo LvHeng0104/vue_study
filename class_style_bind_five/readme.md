@@ -1,3 +1,11 @@
+# Table of Contents
+
+  * [五.绑定Class和Style](#五绑定class和style)
+    * [5.1 对象语法](#51-对象语法)
+  * [5.2 Class绑定语法使用计算属性](#52-class绑定语法使用计算属性)
+  * [5.3 数组语法](#53-数组语法)
+
+
 ## 五.绑定Class和Style
 ### 5.1 对象语法
 > 给`:class`一个对象,可动态切换clss
