@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	
+	<body>
+		<div id="app">
+			<!-- 单个样式绑定 -->
+			<div :style="{color:activeColor,fontSize:activeFont}">a</div>
+			<hr >
+			<!-- 绑定一组样式,有些样式不支持,比如background-color-->
+			<div :style="styleObject">b</div>
+			
+		
+			
+			
+			
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		new Vue({
+			el: "#app",
+			data: {
+				activeColor:"red",
+				activeFont:"20px",
+				styleObject:{
+					width: "12.5rem",
+					height: "12.5rem",
+					/* vue应该是有bug,没办法识别 -  */
+					// background-color: "lightgoldenrodyellow",
+					// font-style: oblique,
+					color:"yellow"
+				}
+			}
+		})
+	</script>
+</html>
