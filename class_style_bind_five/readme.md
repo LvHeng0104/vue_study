@@ -1,4 +1,4 @@
-# Table of Contents
+# 绑定Class和Style
 
   * [五.绑定Class和Style](#五绑定class和style)
     * [5.1 对象语法](#51-对象语法)
