@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<body>
+		<div id="app">
+			<h5>给每个列表子项绑定一个key,用于重新渲染一个新的列表</h5>
+			<li v-for="(item,index) in items" key='index'>
+				<!-- 在v-for中,可以访问所有的父作用域属性 -->
+				{{parentMessage}} - {{index}} - {{item.message}} 
+			</li>
+			<hr>
+			<br>
+			<h4>读取对象的所有value</h4>
+			<!-- 遍历对象,会读取该对象的所有属性-->
+			<li v-for="ob in obj">
+				{{ob}}
+			</li>
+		<h4>读取对象的所有 k - v</h4>
+			<!-- 也可以读取key -->
+			<li v-for="(value,key) in obj">
+				{{key}}:{{value}}
+			</li>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		new Vue({
+			el: "#app",
+			data: {
+				parentMessage: 'Parent',
+				items: [{
+						message: 'Foo'
+					},
+					{
+						message: 'Bar'
+					}
+
+				],
+				obj: {
+					name: '张三',
+					age: '18',
+					address: '南京'
+				}
+			}
+		})
+	</script>
+</html>
