@@ -1,3 +1,51 @@
+# 笔记总纲:2019-8-13
+
+* [笔记总纲:2019-8-3/16:31](#笔记总纲2019-8-31631)
+* [使用到的指令](#使用到的指令)
+  * [一.起步](#一起步)
+    * [1.1 vue是响应式的](#11-vue是响应式的)
+    * [1.2 绑定vue成员变量到dom属性](#12-绑定vue成员变量到dom属性)
+    * [1.3 条件](#13-条件)
+    * [1.4 遍历循环](#14-遍历循环)
+    * [1.5 事件监听器](#15-事件监听器)
+    * [1.6 即时数据渲染](#16-即时数据渲染)
+    * [1.7 组件](#17-组件)
+      * [1.7.1 非动态组件](#171-非动态组件)
+      * [1.7.2 动态参数绑定](#172-动态参数绑定)
+  * [二. Vue 实例](#二-vue-实例)
+    * [2.1 Vue对象的初始化](#21-vue对象的初始化)
+    * [2.2 获取Vue本身的属性和方法](#22-获取vue本身的属性和方法)
+  * [三.Vue语法特性 Vue本生的API](#三vue语法特性-vue本生的api)
+    * [3.1 文本渲染](#31-文本渲染)
+    * [3.2 DOM对象渲染](#32-dom对象渲染)
+    * [3.3 动态绑定标签属性](#33-动态绑定标签属性)
+    * [3.4 使用JavaScript 表达式](#34-使用javascript-表达式)
+  * [四.计算属性和侦听器](#四计算属性和侦听器)
+    * [4.1 计算属性](#41-计算属性)
+      * [4.1.2 计算属性的getter/setter](#412-计算属性的gettersetter)
+    * [4.2 侦听属性](#42-侦听属性)
+  * [五.绑定Class和Style](#五绑定class和style)
+    * [5.1 对象语法](#51-对象语法)
+  * [5.2 Class绑定语法使用计算属性](#52-class绑定语法使用计算属性)
+    * [5.3 数组语法](#53-数组语法)
+    * [5.4 行内样式绑定](#54-行内样式绑定)
+  * [六.条件渲染](#六条件渲染)
+  * [[官方文档](https://cn.vuejs.org/v2/guide/conditional.html)](#官方文档httpscnvuejsorgv2guideconditionalhtml)
+    * [6.1 条件渲染有`v-if` `v-else` `v-else-if`](#61-条件渲染有v-if-v-else-v-else-if)
+    * [6.2 用key管理可复用的元素](#62-用key管理可复用的元素)
+    * [6.3 v-show 和 v-if 的不同](#63-v-show-和-v-if-的不同)
+  * [七.列表渲染](#七列表渲染)
+    * [7.1 列表渲染语法](#71-列表渲染语法)
+    * [7.2 for中的下标 和 遍历对象](#72-for中的下标-和-遍历对象)
+    * [7.3 变异方法](#73-变异方法)
+    * [7.4 替换数组](#74-替换数组)
+    * [7.5 不支持响应式的变更模式](#75-不支持响应式的变更模式)
+      * [解决方案](#解决方案)
+  * [八. 事件处理](#八-事件处理)
+    * [8.1 监听事件](#81-监听事件)
+    * [8.2 事件修饰符](#82-事件修饰符)
+
+
 # 笔记总纲:2019-8-3/16:31
 
 * [笔记总纲:2019-7-29/00:31](#笔记总纲2019-7-290031)
@@ -1229,3 +1277,73 @@ Vue实例本身提供了一个全局方法 `Vue.set` 也可简写为 $vm.set
 ```javascript
 	vm.array.splice(newLength)
 ```
+
+
+## 八. 事件处理
+### 8.1 监听事件
+使用`v-on`指令将听DOM的事件,并再触发时运行一些JavaScript代码
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<body>
+		<div id="app">
+			<!-- 监听事件 -->
+			<button @click='item+=1'>{{item}}</button>
+			<!-- 监听绑定方法 -->
+			<button @click='clickMethod'>{{item}}</button>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				item:0
+			},
+			methods:{
+				clickMethod:function(event){
+					this.item+=1
+				}
+			}
+		})
+	</script>
+</html>
+
+```
+
+
+### 8.2 事件修饰符
+```html
+
+<!-- 阻止单击事件继续传播 -->
+<a v-on:click.stop="doThis"></a>
+
+<!-- 提交事件不再重载页面 -->
+<form v-on:submit.prevent="onSubmit"></form>
+
+<!-- 修饰符可以串联 -->
+<a v-on:click.stop.prevent="doThat"></a>
+
+<!-- 只有修饰符 -->
+<form v-on:submit.prevent></form>
+
+<!-- 添加事件监听器时使用事件捕获模式 -->
+<!-- 即元素自身触发的事件先在此处理，然后才交由内部元素进行处理 -->
+<div v-on:click.capture="doThis">...</div>
+
+<!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
+<!-- 即事件不是从内部元素触发的 -->
+<div v-on:click.self="doThat">...</div>
+```
+
+
+
